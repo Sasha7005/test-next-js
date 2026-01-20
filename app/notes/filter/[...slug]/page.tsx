@@ -1,4 +1,4 @@
-// app/notes/filter/[...slug]/page.tsx
+// // app/notes/filter/[...slug]/page.tsx
 
 import { getNotes } from "@/lib/api";
 import NoteList from "@/components/NoteList/NoteList";

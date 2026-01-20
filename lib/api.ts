@@ -29,3 +29,18 @@ export const getSingleNote = async (id: string) => {
   const res = await axios.get<Note>(`/notes/${id}`);
   return res.data;
 };
+
+// lib/api.ts
+
+export type Category = {
+  id: string;
+  name: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export const getCategories = async () => {
+  const res = await axios<Category[]>("/categories");
+  return res.data;
+};

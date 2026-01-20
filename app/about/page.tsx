@@ -1,5 +1,15 @@
-const about = () => {
-  return <div>about</div>;
+// app/about/page.tsx
+
+import { Metadata } from "next";
+import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "About page",
 };
 
-export default about;
+const About = () => {
+  redirect("/");
+  return null;
+};
+
+export default About;
