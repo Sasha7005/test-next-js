@@ -15,9 +15,20 @@ export type NoteListResponse = {
   total: number;
 };
 
+export type NewNoteData = {
+  title: string;
+  content: string;
+  categoryId: string;
+};
+
 axios.defaults.baseURL = "https://next-v1-notes-api.goit.study";
 
 // const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const createNote = async (data: NewNoteData) => {
+  const res = await axios.post<Note>("/notes", data);
+  return res.data;
+};
 
 export const getNotes = async (categoryId?: string) => {
   const res = await axios.get<NoteListResponse>("/notes", {
