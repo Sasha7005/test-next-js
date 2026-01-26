@@ -2,12 +2,17 @@
 
 import css from "./Header.module.css";
 import Link from "next/link";
+import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
+import AuthNavigation from "../AuthNavigation/AuthNavigation";
 
 const Header = () => {
+  // Прибираємо запит
+  // const categories = await getCategories()
+
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
-        NoteHub
+        Note HUB
       </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
@@ -15,7 +20,8 @@ const Header = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/notes/filter/all">Notes</Link>
+            {/* Пропс categories тепер не приходять з SSR */}
+            <CategoriesMenu />
           </li>
           <li>
             <Link href="/profile">Profile</Link>
@@ -23,6 +29,7 @@ const Header = () => {
           <li>
             <Link href="/about">About</Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>
