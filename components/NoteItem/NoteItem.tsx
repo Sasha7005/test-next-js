@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Note } from "@/lib/api";
+import { Note } from "@/lib/api/api";
 
 type Props = {
   item: Note;

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { nextServers } from "./api";
+
 export type Note = {
   id: string;
   title: string;
@@ -107,4 +109,18 @@ export const getMe = async () => {
 };
 export const logout = async (): Promise<void> => {
   await nextServer.post("/auth/logout");
+};
+
+// lib/api/clientApi.ts
+
+// попередній код...
+
+export type UpdateUserRequest = {
+  userName?: string;
+  photoUrl?: string;
+};
+
+export const updateMe = async (payload: UpdateUserRequest) => {
+  const res = await nextServer.put<User>("/auth/me", payload);
+  return res.data;
 };

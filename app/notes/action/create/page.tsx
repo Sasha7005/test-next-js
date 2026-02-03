@@ -1,6 +1,6 @@
 // app/notes/action/create
 import css from "./CreateNote.module.css";
-import { getCategories } from "@/lib/api";
+import { getCategories } from "@/lib/api/api";
 import NoteForm from "@/components/NoteForm/NoteForm";
 
 const CreateNote = async () => {

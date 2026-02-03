@@ -26,3 +26,29 @@ export async function GET() {
     );
   }
 }
+// app/api/auth/me/route.ts
+
+// Решта коду для GET
+
+export async function PUT(request: Request) {
+  const cookieStore = await cookies();
+  const body = await request.json();
+  try {
+    const { data } = await api.put("/auth/me", body, {
+      headers: {
+        Cookie: cookieStore.toString(),
+      },
+    });
+
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json(
+      {
+        error:
+          (error as ApiError).response?.data?.error ??
+          (error as ApiError).message,
+      },
+      { status: (error as ApiError).status },
+    );
+  }
+}

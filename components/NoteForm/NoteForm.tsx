@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Category, createNote, NewNoteData } from "@/lib/api";
+import { Category, createNote, NewNoteData } from "@/lib/api/api";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 // 1. Імпортуємо хук

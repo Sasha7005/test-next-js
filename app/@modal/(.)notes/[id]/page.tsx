@@ -1,6 +1,6 @@
 // app/@modal/(.)notes/[id]/page.tsx
 
-import { getSingleNote } from "@/lib/api";
+import { getSingleNote } from "@/lib/api/api";
 import Modal from "@/components/Modal/Modal";
 
 type Props = {
